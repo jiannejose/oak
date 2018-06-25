@@ -4,15 +4,16 @@
 
 // Settings
 @import './settings/colors';
+@import './settings/fonts';
 
 // Tools
 
 
 // General
-@import './general/html';
+@import './general/shared';
 
 // Elements
-
+@import './elements/body';
 
 // Objects
 
