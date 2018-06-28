@@ -6,6 +6,12 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 
+gulp.task('watch', function() {
+  gulp.start(['copy-lib', 'copy-imgs']);
+  gulp.watch('./assets/scss/**/*.scss', ['sass']);
+  gulp.watch('./assets/js/*.js', ['js-compile']);
+});
+
 gulp.task('sass', function() {
   return gulp.src('./assets/scss/main.scss')
   .pipe(sass({
@@ -18,10 +24,6 @@ gulp.task('sass', function() {
   .pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('sass:watch', function() {
-  gulp.watch('./assets/scss/**/*.scss', ['sass']);
-});
-
 gulp.task('js-compile', function() {
   return gulp.src('./assets/js/main.js')
     .pipe(babel({
@@ -29,4 +31,14 @@ gulp.task('js-compile', function() {
     }))
     uglify()
     .pipe(gulp.dest('dist/js'))
+});
+
+gulp.task('copy-lib', function() {
+  return gulp.src('./assets/css_lib/*.css')
+  .pipe(gulp.dest('./dist/css/css_lib/'));
+});
+
+gulp.task('copy-imgs', function() {
+  return gulp.src(['./assets/img/*.jpg', './assets/img/*.png'])
+  .pipe(gulp.dest('./dist/img'));
 });
