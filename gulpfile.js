@@ -10,7 +10,7 @@ const pump = require('pump');
 const eslint = require('gulp-eslint');
 
 gulp.task('watch', function() {
-  gulp.start(['copy-lib', 'copy-imgs']);
+  gulp.start('copy-imgs');
   gulp.start('js-compile');
   gulp.watch('./assets/scss/**/*.scss', ['sass']);
   gulp.watch('./assets/js/*.js', ['js-compile']);

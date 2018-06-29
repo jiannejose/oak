@@ -1,5 +1,23 @@
 .o-container {
-    margin: 0 auto;
-    max-width: 1100px;
-    position: relative;
+    transition: all 1000ms ease-out;
+}
+
+@include breakpoint(medium) {
+    .o-container {
+        max-width: 750px;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+@include breakpoint(large) {
+    .o-container {
+        max-width: 970px;
+    }
+}
+
+@include breakpoint(1440px) {
+    .o-container {
+        max-width: 1170px;
+    }
 }
