@@ -134,27 +134,11 @@ NAV - MAIN
   transition: all 500ms ease;
 }
 
-.c-nav__social ul {
+.c-nav__social .o-social {
   width: 160px;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 0;
-
-  li {
-    padding: 3px;
-  }
 
   a {
-    text-decoration: none;
     color: $white-900;
-    transition: all 400ms ease-in;
-  }
-}
-
-.c-nav__social ul {
-  li:hover a {
-    color: $aqua-500;
   }
 }
 

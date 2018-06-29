@@ -1,7 +1,6 @@
 // Vendor
 @import 'normalize';
 
-
 // Settings
 @import './settings/colors';
 @import './settings/fonts';
@@ -17,6 +16,7 @@
 
 // Objects
 @import './objects/o-container';
+@import './objects/o-social';
 
 // Components
 @import './components/c-nav';

@@ -1,5 +1,136 @@
 footer {
+  width: 100%;
+  height: auto;
+  background-color: $gray-100;
+}
+
+.c-footer__inner {
+  padding: 50px 0;
+  line-height: 1.6em;
+}
+
+.c-footer__inner .c-footer__content:first-child p {
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  line-height: 1.45em;
+}
+.c-footer__content {
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+
+  p {
+      font-family: $font-primary;
+      font-size: 14px;
+      color: $gray-300;
+  }
+}
+
+.c-footer__content:nth-child(2) {
+  padding-top: 100px;
+
+  p {
+      font-weight: 100;
+  }
+}
+
+.c-footer__title {
+  font-family: $font-secondary;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 10px;
+}
+
+.c-footer__inner_mid {
+  padding: 40px 0 50px;
+}
+
+.c-footer__social {
+  width: 150px;
+  padding-bottom: 45px;
+  margin: 0 auto;
+}
+
+.c-footer__social .o-social a {
+  color: $black-900;
+
+  i {
+      font-size: 14px;
+  }
+}
+
+.c-footer__copyright {
+  text-align: center;
+
+  p {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    line-height: 1.5em;
+  }
+}
+
+@include breakpoint(medium) {
+  footer {
+    height: 300px;
+  }
+
+  footer .o-container {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+  }
+
+  .c-footer__inner {
+    width: (100%/3)*2;
+    display: flex;
+
+    .c-footer__content {
+      width: 400px;
+      text-align: left;
+      padding: 0 25px;
+      margin: 0;
+    }
+  }
+
+  .c-footer__content:nth-child(2) {
+    padding-top: 0;
+  }
+
+  .c-footer__inner_mid {
+    width: 33%;
+    position: absolute;
+    right: 0;
+
+    .c-footer__content {
+      padding: 0;
+      margin: 0 auto;
+    }
+  }  
+}
+
+@include breakpoint(large) {
+  .c-footer__inner {
     width: 100%;
-    height: auto;
-    background-color: $gray-100;
+    justify-content: space-between;
+
+    .c-footer__content {
+      width: 200px;
+    }
+  }
+
+  .c-footer__inner_mid {
+    width: 100%;
+    right: -50%;
+    transform: translateX(-50%);
+
+    .c-footer__content {
+      width: 400px;
+    }
+  }
 }
