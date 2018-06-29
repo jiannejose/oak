@@ -5,9 +5,13 @@ const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
+const eslint = require('gulp-eslint');
 
 gulp.task('watch', function() {
   gulp.start(['copy-lib', 'copy-imgs']);
+  gulp.start('js-compile');
   gulp.watch('./assets/scss/**/*.scss', ['sass']);
   gulp.watch('./assets/js/*.js', ['js-compile']);
 });
@@ -24,13 +28,19 @@ gulp.task('sass', function() {
   .pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('js-compile', function() {
-  return gulp.src('./assets/js/main.js')
-    .pipe(babel({
+gulp.task('js-compile', function(cb) {
+  pump([
+    gulp.src('./assets/js/*.js'),
+    eslint(),
+    eslint.format(),
+    eslint.failAfterError(),
+    babel({
       presets: ['env']
-    }))
-    uglify()
-    .pipe(gulp.dest('dist/js'))
+    }),
+    uglify(),
+    gulp.dest('./dist/js')
+  ], cb
+);
 });
 
 gulp.task('copy-lib', function() {
