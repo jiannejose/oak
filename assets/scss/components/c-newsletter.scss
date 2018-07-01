@@ -1,0 +1,61 @@
+.c-newsletter__intro {
+    width: 100%;
+    height: 325px;
+    background-color: $aqua-500;
+    position: relative;
+}
+
+.c-newsletter__intro_content {
+    width: 75%;
+    font-family: $font-secondary;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 2em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 40px;
+}
+
+.c-newsletter__signin {
+    width: 100%;
+    height: 325px;
+    position: relative;
+    border: solid 10px $black-900;
+    background-color: $gray-200;
+}
+
+.c-newsletter__signin form {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 12px;
+    
+    input,
+    button {
+        border: none;
+        text-transform: uppercase;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    input {
+        color: $gray-300;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        width: 100%;
+        padding: 18px 10px;
+    }
+
+    button {
+        color: $white-900;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 0.15em;
+        background-color: $aqua-500;
+        padding: 12px 30px;
+        margin-top: 30px;
+    }
+}
