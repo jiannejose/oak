@@ -71,10 +71,6 @@
 }
 
 @include breakpoint(medium) {
-  .c-newsletter {
-    margin: 0 15px;
-  }
-
   /*** intro ***/
   .c-newsletter__intro_content {
     font-size: 28px;
