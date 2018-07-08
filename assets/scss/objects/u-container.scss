@@ -1,10 +1,10 @@
-.o-container {
+.u-container {
   transition: all 1000ms ease-out;
   padding: 0 15px;
 }
 
 @include breakpoint(medium) {
-  .o-container {
+  .u-container {
       max-width: 750px;
       position: relative;
       margin: 0 auto;
@@ -12,13 +12,13 @@
 }
 
 @include breakpoint(large) {
-  .o-container {
+  .u-container {
     max-width: 970px;
   }
 }
 
 @include breakpoint(1440px) {
-  .o-container {
+  .u-container {
     max-width: 1170px;
   }
 }
