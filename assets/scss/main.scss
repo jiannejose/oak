@@ -1,13 +1,6 @@
 // Vendor
 @import 'normalize';
 
-// Settings
-@import './settings/colors';
-@import './settings/fonts';
-
-// Tools
-@import './tools/breakpoints';
-
 // General
 @import './general/shared';
 
@@ -29,4 +22,7 @@
 @import './components/c-footer';
 
 // Utilities
-@import './objects/u-container';
+@import './utilities/u-container';
+@import './utilities/breakpoints';
+@import './utilities/colors';
+@import './utilities/fonts';
